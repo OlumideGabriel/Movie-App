@@ -43,5 +43,6 @@ Learned the importance of clear and concise documentation for code readability a
 7. Version Control with Git
 Utilized Git for version control, managing project files, and collaborating with team members.
 Practiced common Git commands for committing changes, branching, merging, and resolving conflicts.
-Conclusion
+
+# Conclusion
 The Movie App project provided an excellent opportunity to enhance Python programming skills, deepen understanding of OOP concepts, and gain hands-on experience with data handling, external API integration, and documentation practices. By working on this project, valuable insights were gained into building robust, scalable, and maintainable software applications.
