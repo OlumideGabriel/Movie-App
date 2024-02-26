@@ -21,26 +21,27 @@ Search for a movie in the database.
 Sort the movies in the database based on their ratings.
 9. Generate Website
 Generate a website based on the movie data stored in the database.
-Skills Learned
-1. Python Programming
+
+# Skills Learned
+- Python Programming
 Utilized Python programming language to develop the Movie App.
 Learned various concepts such as file handling, data manipulation, and error handling.
-2. Object-Oriented Programming (OOP)
+- Object-Oriented Programming (OOP)
 Employed OOP principles to organize code into classes and methods, promoting modularity and reusability.
 Gained proficiency in creating and managing class structures, inheritance, and encapsulation.
-3. Handling External APIs
+- Handling External APIs
 Integrated an external movie API to fetch movie data for adding to the database.
 Learned how to make HTTP requests using the requests library and process JSON responses.
-4. File I/O Operations
+- File I/O Operations
 Implemented functionalities to read from and write to CSV and JSON files for storing movie data.
 Gained experience in working with file objects, reading and writing data, and managing file paths.
-5. Data Handling and Processing
+- Data Handling and Processing
 Processed and manipulated movie data stored in CSV and JSON formats.
 Performed operations such as filtering, sorting, and calculating statistics on movie data.
-6. Documentation
+- Documentation
 Wrote comprehensive docstrings for classes and methods to document their purpose, parameters, and return values.
 Learned the importance of clear and concise documentation for code readability and maintainability.
-7. Version Control with Git
+- Version Control with Git
 Utilized Git for version control, managing project files, and collaborating with team members.
 Practiced common Git commands for committing changes, branching, merging, and resolving conflicts.
 
