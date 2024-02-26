@@ -1,6 +1,7 @@
 import statistics
 import website_generator
 import random
+from thefuzz import fuzz
 
 HTML_TEMPLATE = "website/index_template.html"
 
@@ -43,7 +44,7 @@ class MovieApp:
         search_lst = []
         movie_search = input("Search movie: ")
         for movie in movie_list:
-            if fuzz.partial_ratio(movie_search, movie["title"]) > 75:
+            if fuzz.partial_ratio(movie_search, movie["title"]) > 70:
                 search_lst.append(movie)
 
         desc_list = search_lst[::-1]
