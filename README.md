@@ -1,4 +1,4 @@
-Project Name: Movie App
+# Project Name: Movie App
 
 This Movie App project is a Python-based application designed for managing movie data. The app allows users to perform various operations such as adding, deleting, and updating movie information, displaying statistics, generating a website, and more.
 
