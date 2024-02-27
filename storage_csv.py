@@ -12,7 +12,7 @@ class StorageCsv(IStorage):
         self.file = file_path
         if not os.path.exists(file_path):  # Creates file_path if file does not exist
             with open(file_path, 'w', newline='') as csvfile:
-                writer = csv.DictWriter(csvfile, fieldnames=['Title', 'Rating', 'Year', 'Poster'])
+                writer = csv.DictWriter(csvfile, fieldnames=['title', 'rating', 'year', 'poster'])
                 writer.writeheader()
 
     def list_movies(self):
@@ -29,7 +29,7 @@ class StorageCsv(IStorage):
 
     def add_movie(self):
         """Functions get data from movie API, and adds a movie to the movies database"""
-        new_movie_title = input(f"Enter new movie for {self.file}: ").title()
+        new_movie_title = input(f"Enter new movie for {self.file}: ")
         movie_dict = self.list_movies()
         for movie in movie_dict:
             if new_movie_title == movie['title']:

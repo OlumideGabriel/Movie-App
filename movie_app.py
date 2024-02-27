@@ -30,7 +30,7 @@ class MovieApp:
 
         # Worst movie
         worst_movie = min(movie_list, key=lambda x: x["rating"])
-        print(f'Worst movie: {worst_movie["title"].title()}, {worst_movie["rating"]}')
+        print(f'Worst movie: {worst_movie["title"]}, {worst_movie["rating"]}')
 
     def _random_movie(self):
         """Displays a random movie, alongside its rating"""
@@ -103,7 +103,7 @@ class MovieApp:
                 s = "s" if len(movies) > 1 else ""  # Pluralize movies when movies list > 1
                 print(f"{len(movies)} movie{s} in total\n")
                 for movie in movies:
-                    print(f'{movie["title"].title()}: {movie["rating"]}, {movie["year"]}')
+                    print(f'{movie["title"]}: {movie["rating"]}, {movie["year"]}')
 
             elif menu_choice == "2":
                 self._storage.add_movie()

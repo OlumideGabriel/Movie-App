@@ -25,7 +25,7 @@ class StorageJson(IStorage):
 
     def add_movie(self):
         """Functions get data from movie API, and adds a movie to the movies database"""
-        new_movie_title = input(f"Enter new movie for {self.file}: ").title()
+        new_movie_title = input(f"Enter new movie for {self.file}: ")
         movie_list = self.list_movies()
         for movie in movie_list:
             if new_movie_title in movie["title"]:
