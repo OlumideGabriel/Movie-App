@@ -34,14 +34,16 @@ class StorageJson(IStorage):
 
         url = REQUEST_URL + new_movie_title
 
+        default_poster = '/images/default_image.png'
+
         try:
             response = requests.get(url)
             if response.status_code == requests.codes.ok:
                 movie = response.json()
                 movie_title = movie["Title"]
                 movie_year = movie["Year"]
-                movie_poster = movie["Poster"]
-                movie_rating = float(movie["imdbRating"])
+                movie_poster = default_poster if movie["Poster"] == 'N/A' else movie["Poster"]
+                movie_rating = movie["imdbRating"]
                 latest_movie = {'title': movie_title.title(), 'rating': movie_rating,
                                 'year': movie_year, 'poster': movie_poster}
                 movie_list.append(latest_movie)

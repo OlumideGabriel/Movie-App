@@ -39,14 +39,16 @@ class StorageCsv(IStorage):
         # Simulating movie data retrieval from API
         url = REQUEST_URL + new_movie_title
 
+        default_poster = '/images/default_image.png'
+
         try:
             response = requests.get(url)
             if response.status_code == requests.codes.ok:
                 movie = response.json()
                 movie_title = movie["Title"].title()
                 movie_year = movie["Year"]
-                movie_poster = movie["Poster"]
-                movie_rating = float(movie["imdbRating"])
+                movie_poster = default_poster if movie["Poster"] == 'N/A' else movie["Poster"]
+                movie_rating = movie["imdbRating"]
                 latest_movie = {'name': movie_title, 'rating': movie_rating, 'year': movie_year, 'poster': movie_poster}
                 movie_dict.append(latest_movie)
                 with open(self.file, 'a', newline='') as csvfile:
@@ -109,15 +111,19 @@ class StorageCsv(IStorage):
                         print("Invalid input! Movie rating must be a number.")
 
                 movie["rating"] = movie_rating
+                print(movie_dict)
 
                 with open(self.file, 'w', newline='') as csvfile:
                     writer = csv.DictWriter(csvfile, fieldnames=['title', 'rating', 'year', 'poster'])
                     writer.writeheader()
-                    writer.writerow({'title': movie['title'], 'rating': movie['rating'], 'year': movie['year'],
-                                     'poster': movie['poster']})
+                    for _movie in movie_dict:
+                        writer.writerow({'title': _movie['title'], 'rating': _movie['rating'], 'year': _movie['year'],
+                                         'poster': _movie['poster']})
+
                 print(f"Movie Updated! >>> {movie_to_update.title()}: {movie_rating}")
                 movie_found = True  # Set flag to True if movie is found
                 break  # No need to continue looping if movie is found
 
         if not movie_found:
             print("Movie not found!")
+

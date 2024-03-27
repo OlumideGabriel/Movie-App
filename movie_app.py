@@ -15,8 +15,12 @@ class MovieApp:
         lst_of_ratings = []
         movie_list = self._storage.list_movies()  # Assuming list_movies() returns the movie list
         for movie in movie_list:
-            ratings = float(movie["rating"])
-            lst_of_ratings.append(ratings)
+            if movie['rating'] == 'N/A':
+                movie_list.remove(movie)
+
+        for movie in movie_list:
+            ratings = movie["rating"]
+            lst_of_ratings.append(float(ratings))
 
         # Average rating
         print(f"Average rating: {round(statistics.mean(lst_of_ratings), 2)}")
